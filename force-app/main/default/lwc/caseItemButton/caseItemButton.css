@@ -1,0 +1,29 @@
+/* Center the button and add spacing */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+/* Style the button */
+.custom-button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* .custom-button:hover {
+    background-color: #005fb2;
+    color: white;
+} */
+
+/* Style the datatable container */
+.datatable-container {
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #f4f6f9;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

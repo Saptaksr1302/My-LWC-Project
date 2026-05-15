@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Sort Products and Find the Best One" icon-name="action:filter">
+    <div class="container slds-m-around_medium">
+        <!-- Sorting Dropdown -->
+        <lightning-combobox
+            label="Sort Products By Your Choice"
+            placeholder="Select an Option"
+            options={sortingOptions}
+            onchange={handleSortingChange}>
+        </lightning-combobox>
+
+        <!-- Product List -->
+        <template if:true={products.length}>
+            <ul class="product-list">
+                <template for:each={products} for:item="product">
+                    <li key={product.Id} class="slds-item">
+                        <p><strong>{product.Name}</strong></p>
+                    </li>
+                </template>
+            </ul>
+        </template>
+
+        <!-- For No Products Found -->
+        <template if:true={productsNotFound}>
+            <div class="text-show">
+                <p class="error-text">No products available for the selected sorting option.....Please Check Once</p>
+            </div>
+        </template>
+    </div>
+    </lightning-card>
+</template>

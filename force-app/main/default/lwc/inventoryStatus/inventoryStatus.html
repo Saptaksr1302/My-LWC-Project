@@ -1,0 +1,20 @@
+<template>
+    <div class="stock-status">
+        <template if:true={isInStock}>
+            <lightning-icon icon-name="utility:success" alternative-text="In Stock" size="small" class="status-icon in-stock"></lightning-icon>
+            <p class="in-stock">{stockMessage}</p>
+        </template>
+        <template if:true={isOutOfStock}>
+            <lightning-icon icon-name="utility:ban" alternative-text="Out of Stock" size="small" class="status-icon out-of-stock"></lightning-icon>
+            <p class="out-of-stock">{stockMessage}</p>
+        </template>
+        <template if:true={isNotAvailable}>
+            <lightning-icon icon-name="utility:warning" alternative-text="Data not Available" size="small" class="status-icon warning"></lightning-icon>
+            <p class="warning">{stockMessage}</p>
+        </template>
+        <template if:true={isError}>
+            <lightning-icon icon-name="utility:error" alternative-text="Error" size="small" class="status-icon error"></lightning-icon>
+            <p class="error">{stockMessage}</p>
+        </template>
+    </div>
+</template>

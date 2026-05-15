@@ -1,0 +1,32 @@
+.container{
+    padding: 1rem;
+    background-color: #f4f6f9;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+lightning-combobox{
+    margin-bottom: 1rem;
+}
+
+.product-list{
+    list-style-type: none;
+    padding: 0;
+}
+
+.slds-item{
+    padding: 0.5rem 0;
+    border-bottom: 1px dotted #d8dde6;
+}
+
+.slds-item:last-child{
+    border-bottom: none;
+}
+
+.text-show{
+    text-align: center;
+}
+
+.error-text{
+    color: #e74c3c;
+}

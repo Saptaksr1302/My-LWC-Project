@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Search Products as your Wish" icon-name="utility:search">
+        <div class="container slds-m-around_medium">
+            <lightning-input
+                type="text"
+                label="Search Products"
+                value={keyword}
+                onchange={handleInputChange}
+                placeholder="Enter product name, SKU, or code"
+            ></lightning-input>
+            <lightning-button
+                label="Search"
+                variant="brand"
+                onclick={handleSearch}
+                class="slds-m-top_small"
+            ></lightning-button>
+        </div>
+
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+
+        <template if:true={products.length}>
+            <ul class="slds-list_dotted slds-m-top_medium">
+                <template for:each={products} for:item="product">
+                    <li key={product.productId}>
+                        <strong>{product.name}</strong> -> <strong>Product Code</strong> - {product.productCode}, <strong>Product SKU</strong> - {product.sku}, <strong>Selling Price</strong> - INR {product.price}, <strong>Original Price</strong> - INR {product.strikePrice}
+                    </li>
+                </template>
+            </ul>
+        </template>
+
+        <template if:true={hasNoResults}>
+            <p class="slds-text-color_error slds-m-top_medium slds-m-left_small no_result_text">No products....search to find your's one</p>
+        </template>
+
+        <template if:true={hasNoMatch}>
+            <p class="slds-text-color_destructive slds-m-top_medium slds-m-left_small no_match_text">No products match your search....Try to search again with different one</p>
+        </template>
+    </lightning-card>
+</template>

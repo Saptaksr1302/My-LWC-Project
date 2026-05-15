@@ -1,0 +1,142 @@
+<template>
+    <lightning-card title="My Cases" icon-name="utility:case">
+        <!-- <div class="datatable-header">
+            <lightning-button
+                label="Add Codes"
+                onclick={openModal}
+                variant="outline-brand"
+                class="add-codes-button">
+            </lightning-button>
+        </div> -->
+        <div class="slds-m-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={cases}
+                columns={columns}
+                draft-values={draftValues}
+                onrowaction={handleRowAction}
+                onsave={handleSave}
+                hide-checkbox-column="true"
+                class="custom-datatable">
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+
+    <!-- MODAL for Case Code Selection -->
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header custom-modal-header">
+                    <h2 class="slds-modal__title custom-modal-title">Assign Case Codes to Case No - {selectedCaseNumber}</h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium">
+                    <!-- <template if:true={showError}>
+                        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error slds-m-bottom_medium" role="alert">
+                            <span class="slds-assistive-text">Error</span>
+                            <span class="slds-icon_container slds-icon-utility-error slds-m-right_x-small" title="Error">
+                                <lightning-icon icon-name="utility:error" alternative-text="Error" size="small"></lightning-icon>
+                            </span>
+                            <h2>Please select at least one Case Code to proceed.</h2>
+                        </div>
+                    </template> -->
+                    <template if:true={showError}>
+                        <div class="error-message">
+                            <span class="error-text">⚠️ Please select at least one Case Code to proceed.</span>
+                        </div>
+                    </template>
+
+                    <lightning-datatable
+                        key-field="Id"
+                        data={caseCodes}
+                        columns={codeColumns}
+                        onrowselection={handleCodeSelection}>
+                    </lightning-datatable>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button>
+                    <lightning-button variant="brand" label="Save" onclick={handleSaveCodes}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    
+    <!--For Showing Pop Up after clicking Add Codes button-->
+    <!-- <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-modal__title">{modalTitle}</h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium">
+                    <template if:true={showCaseSelection}>
+                        <lightning-combobox
+                            name="case"
+                            label="Select Case"
+                            value={selectedCaseId}
+                            placeholder="Select a case"
+                            options={caseOptions}
+                            onchange={handleCaseChange}>
+                        </lightning-combobox>
+                    </template>
+
+                    <template if:true={showCodeSelection}>
+                        <lightning-datatable
+                            key-field="Id"
+                            data={caseCodes}
+                            columns={codeColumns}
+                            onrowselection={handleCodeSelection}>
+                        </lightning-datatable>
+                    </template>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button>
+                    <template if:true={showCaseSelection}>
+                        <lightning-button variant="brand" label="Next" onclick={handleNext}></lightning-button>
+                    </template>
+                    <template if:true={showCodeSelection}>
+                        <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+                    </template>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template> -->
+
+    <!-- Modal for Case Details
+    <template if:true={isModalOpen}>
+        <section role="dialog" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Case Details</h2>
+                    <lightning-button-icon 
+                        icon-name="utility:close" 
+                        alternative-text="Close" 
+                        class="slds-modal__close" 
+                        onclick={closeModal}>
+                    </lightning-button-icon>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium">
+                    <p><strong>Case Number:</strong> {selectedCase.CaseNumber}</p>
+                    <p><strong>Subject:</strong> {selectedCase.Subject}</p>
+                    <p><strong>Description:</strong> {selectedCaseDescription}</p>
+                    <p><strong>Origin:</strong> {selectedCaseOrigin}</p>
+                    <p><strong>Status:</strong> {selectedCase.Status}</p>
+                    <p><strong>Reason:</strong> {selectedCaseReason}</p>
+                    <p><strong>Priority:</strong> {selectedCasePriority}</p>
+                    <p><strong>Type:</strong> {selectedCaseType}</p>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <lightning-button label="Close" onclick={closeModal} variant="neutral"></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template> -->
+</template>

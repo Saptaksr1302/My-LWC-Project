@@ -1,0 +1,79 @@
+/* Style the datatable headers */
+.custom-datatable .slds-table thead th {
+    text-align: center;
+    font-weight: bold;
+    background-color: #e3e3e3;
+}
+
+/* Style the datatable rows */
+.custom-datatable .slds-table tbody tr {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.custom-datatable .slds-table tbody tr:hover {
+    background-color: #f4f6f9;
+}
+
+/* Add padding to the datatable */
+.custom-datatable {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the header to position the Add Codes button */
+.datatable-header {
+    display: flex;
+    justify-content: flex-end; /* Align the button to the right */
+    margin-bottom: 1rem;
+}
+
+.add-codes-button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Add spacing between Cancel and Save buttons in the modal footer */
+.slds-modal__footer lightning-button {
+    margin-right: 1rem; /* Add spacing between buttons */
+}
+
+.slds-modal__footer lightning-button:last-child {
+    margin-right: 0; /* Remove margin for the last button */
+}
+
+/* Style the error message container */
+.error-message {
+    display: flex;
+    align-items: center;
+    background-color: #fdecea; /* Light red background */
+    color: #a71930; /* Dark red text */
+    padding: 0.75rem 1rem;
+    border: 1px solid #f5b7b1; /* Border matching the background */
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the error text */
+.error-text {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Style the modal header */
+.custom-modal-header {
+    background-color: #f4f6f9; 
+    padding: 1rem;
+    border-bottom: 1px solid #d8dde6;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* Style the modal title */
+.custom-modal-title {
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #005fb2;
+    text-align: center;
+    margin: 0;
+}

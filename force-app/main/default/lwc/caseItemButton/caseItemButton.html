@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="View Cases In One Click 👀" icon-name="utility:activity">
+        <div class="button-container">
+            <lightning-button label={buttonLabel}
+                variant="brand"
+                onclick={handleOpenCases}
+                class="custom-button">
+            </lightning-button>
+        </div>
+
+        <template if:true={showCases}>
+            <div class="datatable-container">
+                <c-case-data-table></c-case-data-table>
+            </div>
+        </template>
+    </lightning-card>
+</template>

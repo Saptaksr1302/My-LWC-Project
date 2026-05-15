@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Featured Products" icon-name="utility:products">
+        <template if:true={products}>
+            <div class="carousel">
+                <div class="carousel-track" style={trackStyle}>
+                    <template for:each={products} for:item="product">
+                        <div key={product.id} class="carousel-item">
+                            <lightning-card>
+                                <div class="card-content">
+                                    <!-- <img src={product.image} alt={product.name} class="product-image" /> -->
+                                     <p class="product-name"><strong>Our Top Product</strong></p>
+                                    <p class="name"><strong>Name</strong>: {product.name}</p>
+                                    <p class="price"><strong>Price</strong>: ₹ {product.price}</p>
+                                    <lightning-button
+                                        label="View Product"
+                                        variant="brand"
+                                        onclick={handleViewProduct}
+                                        data-id={product.id}
+                                        data-name={product.name}>
+                                    </lightning-button>
+                                </div>
+                            </lightning-card>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- <template if:true={iframeSrc}>
+                    <iframe 
+                        src={iframeSrc} 
+                        sandbox="allow-same-origin allow-scripts allow-popups" 
+                        class="product-iframe">
+                    </iframe>
+                </template> -->
+                <!-- Carousel Controls -->
+                <div class="carousel-controls">
+                    <button class="control prev" onclick={handlePrev}>
+                        <svg fill="#000000" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.003 512.003" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M351.539,256.002l159.07-242.79c2.108-3.226,1.8-7.467-0.76-10.351c-2.568-2.867-6.741-3.686-10.197-1.963L4.719,248.364 C1.826,249.815,0,252.767,0,256.002s1.826,6.187,4.719,7.637l494.933,247.467c1.22,0.606,2.526,0.896,3.814,0.896 c2.381,0,4.719-0.998,6.383-2.859c2.56-2.884,2.867-7.125,0.76-10.351L351.539,256.002z"></path> </g> </g> </g></svg>
+                    </button>
+                    <button class="control next" onclick={handleNext}>
+                        <svg fill="#000000" height="200px" width="200px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.003 512.003" xml:space="preserve"><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <g> <g> <path d="M507.284,248.364L12.35,0.898C8.894-0.826,4.721-0.007,2.153,2.86c-2.56,2.884-2.867,7.125-0.759,10.351l159.07,242.79 L1.393,498.792c-2.108,3.226-1.801,7.467,0.759,10.351c1.664,1.86,4.002,2.859,6.383,2.859c1.289,0,2.594-0.29,3.814-0.896 l494.933-247.467c2.893-1.451,4.719-4.403,4.719-7.637S510.176,249.815,507.284,248.364z"></path> </g> </g> </g></svg>
+                    </button>
+                </div>
+            </div>
+        </template>
+        <template if:false={products}>
+            <p class="no-products-message">No featured products are available at the moment.</p>
+        </template>
+    </lightning-card>
+</template>

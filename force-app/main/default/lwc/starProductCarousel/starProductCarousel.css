@@ -1,0 +1,132 @@
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background-color: #f4f6f9; /* Added background color for carousel */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .product-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+
+.card-content {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffffff; /* Added background color for card content */
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.name, .price {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.price {
+    color: #127b39;
+    font-weight: bold;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.control {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.prev{
+    margin-left: 5px;
+}
+
+.next{
+    margin-right: 5px;
+}
+
+.control svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: white;
+}
+
+.control:focus {
+    outline: none;
+}
+
+.control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.lightning-button {
+    margin-top: 1rem;
+}
+
+.no-products-message{
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+}
+
+/* .product-iframe{
+    width: 100%;
+    height: 600px;
+    border: none;
+    margin-top: 20px;
+} */
+
+.product-name {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

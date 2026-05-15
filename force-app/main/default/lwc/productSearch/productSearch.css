@@ -1,0 +1,43 @@
+.container{
+    padding: 1rem;
+    background-color: #f4f6f9;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+lightning-input{
+    margin-bottom: 1rem;
+}
+
+lightning-button{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+lightning-spinner{
+    display: block;
+    margin: 2rem auto;
+}
+
+.slds-list_dotted{
+    list-style-type: none;
+    padding: 0;
+}
+
+.slds-list_dotted li{
+    padding: 0.5rem 0;
+    border-bottom: 1px dotted #d8dde6;
+}
+
+.slds-list_dotted li:last-child{
+    border-bottom: none;
+}
+
+.no_result_text{
+    color: #e74c3c;
+}
+
+.no_match_text{
+    color: #e74c3c;
+}
