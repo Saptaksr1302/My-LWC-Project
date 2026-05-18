@@ -1,18 +1,29 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Shadow Project Repository (Apex + LWC)
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This repository contains the **Apex classes** and **Lightning Web Components (LWC)** developed while working as a **shadow resource** on a Salesforce project.
 
-## How Do You Plan to Deploy Your Changes?
+The work captured here reflects hands-on exposure to real project scenarios, including understanding existing implementations, contributing to enhancements, fixing issues, and supporting development under guidance.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+---
 
-## Configure Your Salesforce DX Project
+## Overview
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+This repository represents practical Salesforce development experience gained while:
 
-## Read All About It
+- Observing and learning from experienced team members
+- Understanding real-world implementation patterns
+- Supporting active development tasks
+- Building and modifying Apex and LWC components
+- Following enterprise-level coding standards and practices
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+---
+
+## Purpose
+
+The goal of this repository is to:
+
+- Document learning from real project exposure  
+- Practice industry-standard Salesforce development  
+- Build confidence in Apex and LWC development  
+- Understand project structure, workflows, and collaboration  
+- Create reusable and scalable components  
